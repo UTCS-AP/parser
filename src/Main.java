@@ -3,16 +3,16 @@ import data.*;
 import java.util.Scanner;
 
 /**
- * Simple Prefix Calculator
+ * Simple Postfix Calculator
  *
- * Input should be a space delimited arithmetical expression in prefix notation.
+ * Input should be a space delimited arithmetical expression in postfix notation.
  */
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String nextLine = scan.nextLine();
         while (!nextLine.equals("q")) {
-            Expression e = parse(new StringBuilder(nextLine).reverse().toString());
+            Expression e = parse(nextLine);
             System.out.println(e + " = " + e.evaluate());
             nextLine = scan.nextLine();
         }
